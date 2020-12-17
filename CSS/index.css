@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 5.5rem;
+    font-weight: 900;
+    background: linear-gradient(to right, #00aca1, #0064a2);
+    padding: 1rem;
+}
+.main-container {
+    position: relative;
+    width: 80%;
+}
+.cover-img-container {
+    width: 100%;
+    height: 50rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+.cover-img-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #353535;
+    display: inline-block;
+    margin: 1rem 0;
+}
+strong {
+    color: #0064a2;
+}
+
+.notices-container {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.notice-container {
+    display: flex;
+    justify-content: space-between;
+    flex: auto;
+    height: 37.5rem;
+    margin-bottom: 12.5rem;
+    background-color: #ffffff;
+    padding: 1rem;
+}
+.notice-img {
+    width: 50%;
+    position: relative;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.notice-description-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.notice-title {
+    color: black;
+    font-size: 2.5rem;
+    margin-top: 0;
+
+}
+.notice-description {
+    width: 100%;
+}
+.go-to-notice {
+    padding: 1rem;
+    background-color: #10101060;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+.go-to-notice:hover {
+    background-color: #101010d4;
+}
+.notices-container .notice-container:nth-child(odd) {
+    flex-direction: row-reverse;
+    border-left: 0.1rem solid #ddd;
+}
+.notices-container .notice-container:nth-child(even) {
+    border-right: 0.1rem solid #ddd;
+}
+
+
+.month-of-the-year {
+    font-size: 3.5rem;
+    color: #0064a2;
+    position: relative;
+    margin-bottom: 5rem;
+    padding-left: 2rem;
+}
+.month-of-the-year::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(to right, #00aca1, #0064a2);
+    margin-left: -2rem;
+}
