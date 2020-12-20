@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/universal.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Retrospectiva 2020</title>
 </head>
 
@@ -16,63 +17,37 @@
 
     <div class="main-container">
 
-        <p>Com certeza 2020 foi um daqueles anos para mim, cada um teve o seu ponto de vista para este ano mas para mim é que este ano foi de longe o pior de todos, porque eu sinceramente acho que podem existir piores, sei que muita gente perdeu pessoas amadas, perdeu emprego, oportunidades e muitas outras coisas mas também houve vitórias esse ano muita gente se deu bem, abriu um novo negócio, começou a estudar, consegui a sua casa própria, teve um filho(a), então eu posso definer este ano com uma palavra: <strong>"Descoberta"</strong></p>
+        <p>Com certeza 2020 foi um daqueles anos que para mim foi extremamente diferente, cada um tem o seu ponto de
+            vista para este ano mas para mim é que este ano foi de longe o pior de todos, porque eu sinceramente acho
+            que podem existir piores, sei que muita gente perdeu pessoas amadas, perdeu emprego, oportunidades e muitas
+            outras coisas mas também houve vitórias esse ano muita gente se deu bem, abriu um novo negócio, começou a
+            estudar, consegui a sua casa própria, teve um filho(a), então eu posso definer este ano com uma palavra:
+            <strong>"Descoberta"</strong></p>
 
 
         <div class="notices-container">
 
-            <div class="month-container">
-
-                <!--<h2 class="month-of-the-year">Janeiro</h2>-->
-                <div class="notice-container">
-                    <img class="notice-img" src="IMG/pexels-pixabay-279979.jpg" alt="">
-                    <div class="notice-description-container">
-                        <h2 class="notice-title">COVID-19</h2>
-                        <p class="notice-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                            eius! Odit, mollitia enim eveniet ullam vel voluptate autem fuga laboriosam, deserunt
-                            laborum aut cupiditate beatae accusantium, dolore commodi debitis necessitatibus.</p>
-                        <a href="" class="go-to-notice">Ver mais</a>
+            <div v-for="notice in notices" class="notice-container">
+                <a class="notice-img-container" :href="notice.link">
+                    <img class="notice-img" :src="notice.photo" alt="">
+                    <div class="hastag-container">
+                        <h3 class="hastag">#{{notice.hashtag}}</h3>
                     </div>
-                </div>
-
-                <div class="notice-container">
-                    <img class="notice-img" src="IMG/kobe-bryant-durante-jogo-do-lakers.jpeg" alt="">
-                    <div class="notice-description-container">
-                        <h2 class="notice-title">COVID-19</h2>
-                        <p class="notice-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                            eius! Odit, mollitia enim eveniet ullam vel voluptate autem fuga laboriosam, deserunt
-                            laborum aut cupiditate beatae accusantium, dolore commodi debitis necessitatibus.</p>
-                        <a href="" class="go-to-notice">Ver mais</a>
-                    </div>
-                </div>
-
-                <div class="notice-container">
-                    <img class="notice-img" src="IMG/pexels-redrecords.jpg" alt="">
-                    <div class="notice-description-container">
-                        <h2 class="notice-title">COVID-19</h2>
-                        <p class="notice-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                            eius! Odit, mollitia enim eveniet ullam vel voluptate autem fuga laboriosam, deserunt
-                            laborum aut cupiditate beatae accusantium, dolore commodi debitis necessitatibus.</p>
-                        <a href="" class="go-to-notice">Ver mais</a>
-                    </div>
-                </div>
-
-                <div class="notice-container">
-                    <img class="notice-img" src="IMG/pexels-sergio-souza-3602020.jpg" alt="">
-                    <div class="notice-description-container">
-                        <h2 class="notice-title">COVID-19</h2>
-                        <p class="notice-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                            eius! Odit, mollitia enim eveniet ullam vel voluptate autem fuga laboriosam, deserunt
-                            laborum aut cupiditate beatae accusantium, dolore commodi debitis necessitatibus.</p>
-                        <a href="" class="go-to-notice">Ver mais</a>
-                    </div>
+                </a>
+                <div class="notice-description-container">
+                    <h2 class="notice-title">{{ notice.title }}</h2>
+                    <p class="notice-description">{{ notice.description }}</p>
+                    <a class="go-to-notice" :href="notice.link">Ver mais</a>
                 </div>
             </div>
 
-
         </div>
+
+
     </div>
 
+
+    <script src="JS/index.js"></script>
 </body>
 
 </html>
